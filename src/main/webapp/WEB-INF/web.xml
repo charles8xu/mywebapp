@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+
+    <display-name>Charles Web Application</display-name>
+
+
+
+    <!-- 配置Spring配置文件路径 -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:config/applicationContext.xml</param-value>
+    </context-param>
+
+    <!-- 监听器用来监视Spring配置文件 -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <!-- 日志初始化参数 -->
+    <context-param>
+        <param-name>webAppRootKey</param-name>
+        <param-value>mywebapp.root</param-value>
+    </context-param>
+
+    <!-- log4j配置文件 -->
+    <context-param>
+        <param-name>log4jConfigLocation</param-name>
+        <param-value>classpath:config/log4j.xml</param-value>
+    </context-param>
+
+    <!-- 监视log4j配置文件 -->
+    <listener>
+        <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+    </listener>
+
+
+
+
+    <!-- 配置自定义标签 -->
+    <jsp-config>
+        <taglib>
+            <taglib-uri>/mytag</taglib-uri>
+            <taglib-location>/WEB-INF/tlds/mytag.tld</taglib-location>
+        </taglib>
+
+        <taglib>
+            <taglib-uri>/advancedtag</taglib-uri>
+            <taglib-location>/WEB-INF/tlds/advancedtag.tld</taglib-location>
+        </taglib>
+    </jsp-config>
+
+</web-app>

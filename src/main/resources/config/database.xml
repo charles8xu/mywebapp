@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<datasource name="mysql" version="5.1">
+    <username>root</username>
+    <password>charles</password>
+    <driverclass>com.mysql.jdbc.Driver</driverclass>
+    <host>localhost</host>
+    <dbname>xuchao</dbname>
+    <url>jdbc:mysql://host:3306/dbname</url>
+</datasource>
